@@ -15,6 +15,7 @@
   }
   body {
     @apply bg-background text-foreground has-[div[data-variant='inset']]:bg-sidebar min-h-svh w-full;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Override Radix scroll locking for sticky headers */
@@ -84,4 +85,108 @@
   to {
     height: 0;
   }
+}
+
+/* Main component animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-shift-reverse {
+  0%, 100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: var(--grid-pulse-min, 0.03);
+  }
+  50% {
+    opacity: var(--grid-pulse-max, 0.08);
+  }
+}
+
+@keyframes grid-pulse-dark {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.12;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.4;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.25;
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.25;
+  }
+  66% {
+    transform: translate(20px, -20px) scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-gradient-shift-reverse {
+  animation: gradient-shift-reverse 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 25s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 30s ease-in-out infinite;
 }

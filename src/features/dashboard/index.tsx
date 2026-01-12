@@ -15,6 +15,7 @@ import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { Analytics } from './components/analytics'
+import { FileDropzone } from './components/file-dropzone'
 import { Overview } from './components/overview'
 import { RecentSales } from './components/recent-sales'
 
@@ -182,6 +183,21 @@ export function Dashboard() {
                 </CardContent>
               </Card>
             </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Upload Files</CardTitle>
+                <CardDescription>
+                  Drop files here or click to browse
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <FileDropzone
+                  onFilesDropped={(files) => {
+                    console.log('Files dropped:', files)
+                  }}
+                />
+              </CardContent>
+            </Card>
           </TabsContent>
           <TabsContent value='analytics' className='space-y-4'>
             <Analytics />
