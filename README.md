@@ -1,4 +1,4 @@
-# <img src="public/images/logo.png" alt="Inspector" width="28" height="28" style="vertical-align: middle; margin-right: 8px; padding-bottom: 8px" /> Inspector Dashboard Template
+# <img src="public/images/logo.png" alt="Inspector" width="28" height="28" style="vertical-align: middle; margin-right: 8px; padding-bottom: 6px" /> Inspector Dashboard Template
 
 A modern admin dashboard template built with Shadcn UI and Vite. Designed with Inspector's clean, minimal aesthetic in mind.
 
