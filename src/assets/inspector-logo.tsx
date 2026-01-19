@@ -1,8 +1,7 @@
-import { type SVGProps, type ImgHTMLAttributes } from 'react'
+import { type ImgHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 
-// Inspector logo as an image component
-export function Logo({
+export function InspectorLogo({
   className,
   ...props
 }: ImgHTMLAttributes<HTMLImageElement>) {
@@ -16,11 +15,13 @@ export function Logo({
   )
 }
 
-// Inspector logo as an SVG icon (for use where React.ElementType is needed)
-export function LogoIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
+// SVG version for when an SVG icon component is needed
+export function InspectorLogoIcon({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      id='inspector-logo'
       viewBox='0 0 100 100'
       xmlns='http://www.w3.org/2000/svg'
       className={cn('size-6', className)}

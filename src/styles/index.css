@@ -14,8 +14,37 @@
     @apply overflow-x-hidden;
   }
   body {
-    @apply bg-background text-foreground has-[div[data-variant='inset']]:bg-sidebar min-h-svh w-full;
+    @apply bg-background text-foreground has-[div[data-variant='inset']]:bg-sidebar min-h-svh w-full antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Inspector-style text selection */
+  ::selection {
+    @apply bg-neutral-200 text-black;
+  }
+  .dark ::selection {
+    @apply bg-neutral-700 text-white;
+  }
+
+  /* Inspector-style custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-200 rounded-full border-2 border-transparent bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-300;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-800;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-700;
   }
 
   /* Override Radix scroll locking for sticky headers */
@@ -56,6 +85,25 @@
 
 @utility faded-bottom {
   @apply after:pointer-events-none after:absolute after:start-0 after:bottom-0 after:hidden after:h-32 after:w-full after:rounded-b-md after:bg-[linear-gradient(180deg,_transparent_10%,_var(--background)_70%)] md:after:block;
+}
+
+/* Inspector-style shadow glow */
+@utility shadow-glow {
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.dark .shadow-glow {
+  box-shadow: 0 0 40px -10px rgba(255, 255, 255, 0.15);
+}
+
+/* Smooth transitions */
+@utility transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text balance for headings */
+@utility text-balance {
+  text-wrap: balance;
 }
 
 /* styles.css */

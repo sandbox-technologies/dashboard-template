@@ -12,7 +12,7 @@ export function Main({
   fixed, 
   className, 
   fluid, 
-  variant = 'glassmorphism',
+  variant = 'default',
   children,
   ...props 
 }: MainProps) {
@@ -43,12 +43,18 @@ export function Main({
       data-layout={fixed ? 'fixed' : 'auto'}
       data-variant={variant}
       className={cn(
-        'relative px-4 py-6 transition-all duration-500 ease-out',
+        'relative px-4 py-8 sm:px-6 transition-all duration-500 ease-out',
         
         // Base styles
         fixed && 'flex grow flex-col overflow-hidden',
         
         // Variant-specific styles
+        variant === 'default' && [
+          'bg-muted/40',
+          'dark:bg-neutral-900/50',
+          'rounded-lg',
+        ],
+        
         variant === 'glassmorphism' && [
           'before:absolute before:inset-0 before:-z-10',
           'before:bg-gradient-to-br before:from-primary/5 before:via-background before:to-accent/5',
