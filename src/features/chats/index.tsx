@@ -90,19 +90,18 @@ export function Chats() {
                   size='icon'
                   variant='ghost'
                   onClick={() => setCreateConversationDialog(true)}
-                  className='rounded-lg'
                 >
-                  <Edit size={24} className='stroke-muted-foreground' />
+                  <Edit size={20} className='stroke-muted-foreground' />
                 </Button>
               </div>
 
               <label
                 className={cn(
                   'focus-within:ring-ring focus-within:ring-1 focus-within:outline-hidden',
-                  'border-border flex h-10 w-full items-center space-x-0 rounded-md border ps-2'
+                  'flex h-9 w-full items-center space-x-0 rounded-sm border bg-transparent px-3'
                 )}
               >
-                <SearchIcon size={15} className='me-2 stroke-slate-500' />
+                <SearchIcon size={15} className='me-2 stroke-muted-foreground' />
                 <span className='sr-only'>Search</span>
                 <input
                   type='text'
@@ -128,7 +127,7 @@ export function Chats() {
                       type='button'
                       className={cn(
                         'group hover:bg-accent hover:text-accent-foreground',
-                        `flex w-full rounded-md px-2 py-2 text-start text-sm`,
+                        'flex w-full rounded-sm px-2 py-2 text-start text-sm',
                         selectedUser?.id === id && 'sm:bg-muted'
                       )}
                       onClick={() => {
@@ -162,12 +161,12 @@ export function Chats() {
           {selectedUser ? (
             <div
               className={cn(
-                'bg-background absolute inset-0 start-full z-50 hidden w-full flex-1 flex-col border shadow-xs sm:static sm:z-auto sm:flex sm:rounded-md',
+                'bg-card absolute inset-0 start-full z-50 hidden w-full flex-1 flex-col rounded-sm border shadow-xs sm:static sm:z-auto sm:flex',
                 mobileSelectedUser && 'start-0 flex'
               )}
             >
               {/* Top Part */}
-              <div className='bg-card mb-1 flex flex-none justify-between p-4 shadow-lg sm:rounded-t-md'>
+              <div className='mb-1 flex flex-none justify-between border-b p-4'>
                 {/* Left */}
                 <div className='flex gap-3'>
                   <Button
@@ -202,29 +201,29 @@ export function Chats() {
                   <Button
                     size='icon'
                     variant='ghost'
-                    className='hidden size-8 rounded-full sm:inline-flex lg:size-10'
+                    className='hidden size-8 sm:inline-flex lg:size-10'
                   >
-                    <Video size={22} className='stroke-muted-foreground' />
+                    <Video size={20} className='stroke-muted-foreground' />
                   </Button>
                   <Button
                     size='icon'
                     variant='ghost'
-                    className='hidden size-8 rounded-full sm:inline-flex lg:size-10'
+                    className='hidden size-8 sm:inline-flex lg:size-10'
                   >
-                    <Phone size={22} className='stroke-muted-foreground' />
+                    <Phone size={20} className='stroke-muted-foreground' />
                   </Button>
                   <Button
                     size='icon'
                     variant='ghost'
-                    className='h-10 rounded-md sm:h-8 sm:w-4 lg:h-10 lg:w-6'
+                    className='size-8 lg:size-10'
                   >
-                    <MoreVertical className='stroke-muted-foreground sm:size-5' />
+                    <MoreVertical size={20} className='stroke-muted-foreground' />
                   </Button>
                 </div>
               </div>
 
               {/* Conversation */}
-              <div className='flex flex-1 flex-col gap-2 rounded-md px-4 pt-0 pb-4'>
+              <div className='flex flex-1 flex-col gap-2 px-4 pt-0 pb-4'>
                 <div className='flex size-full flex-1'>
                   <div className='chat-text-container relative -me-4 flex flex-1 flex-col overflow-y-hidden'>
                     <div className='chat-flex flex h-40 w-full grow flex-col-reverse justify-start gap-4 overflow-y-auto py-2 pe-4 pb-4'>
@@ -235,10 +234,10 @@ export function Chats() {
                               <div
                                 key={`${msg.sender}-${msg.timestamp}-${index}`}
                                 className={cn(
-                                  'chat-box max-w-72 px-3 py-2 break-words shadow-lg',
+                                  'chat-box max-w-72 px-3 py-2 break-words shadow-sm',
                                   msg.sender === 'You'
-                                    ? 'bg-primary/90 text-primary-foreground/75 self-end rounded-[16px_16px_0_16px]'
-                                    : 'bg-muted self-start rounded-[16px_16px_16px_0]'
+                                    ? 'bg-primary text-primary-foreground self-end rounded-[12px_12px_0_12px]'
+                                    : 'bg-muted self-start rounded-[12px_12px_12px_0]'
                                 )}
                               >
                                 {msg.message}{' '}
@@ -260,24 +259,24 @@ export function Chats() {
                   </div>
                 </div>
                 <form className='flex w-full flex-none gap-2'>
-                  <div className='border-input bg-card focus-within:ring-ring flex flex-1 items-center gap-2 rounded-md border px-2 py-1 focus-within:ring-1 focus-within:outline-hidden lg:gap-4'>
+                  <div className='flex flex-1 items-center gap-2 rounded-sm border bg-transparent px-2 py-1 focus-within:ring-1 focus-within:ring-ring focus-within:outline-hidden lg:gap-4'>
                     <div className='space-x-1'>
                       <Button
                         size='icon'
                         type='button'
                         variant='ghost'
-                        className='h-8 rounded-md'
+                        className='size-8'
                       >
-                        <Plus size={20} className='stroke-muted-foreground' />
+                        <Plus size={18} className='stroke-muted-foreground' />
                       </Button>
                       <Button
                         size='icon'
                         type='button'
                         variant='ghost'
-                        className='hidden h-8 rounded-md lg:inline-flex'
+                        className='hidden size-8 lg:inline-flex'
                       >
                         <ImagePlus
-                          size={20}
+                          size={18}
                           className='stroke-muted-foreground'
                         />
                       </Button>
@@ -285,10 +284,10 @@ export function Chats() {
                         size='icon'
                         type='button'
                         variant='ghost'
-                        className='hidden h-8 rounded-md lg:inline-flex'
+                        className='hidden size-8 lg:inline-flex'
                       >
                         <Paperclip
-                          size={20}
+                          size={18}
                           className='stroke-muted-foreground'
                         />
                       </Button>
@@ -318,15 +317,15 @@ export function Chats() {
           ) : (
             <div
               className={cn(
-                'bg-card absolute inset-0 start-full z-50 hidden w-full flex-1 flex-col justify-center rounded-md border shadow-xs sm:static sm:z-auto sm:flex'
+                'bg-card absolute inset-0 start-full z-50 hidden w-full flex-1 flex-col justify-center rounded-sm border shadow-xs sm:static sm:z-auto sm:flex'
               )}
             >
               <div className='flex flex-col items-center space-y-6'>
-                <div className='border-border flex size-16 items-center justify-center rounded-full border-2'>
-                  <MessagesSquare className='size-8' />
+                <div className='flex size-14 items-center justify-center rounded-full border bg-muted'>
+                  <MessagesSquare className='size-6 stroke-muted-foreground' />
                 </div>
-                <div className='space-y-2 text-center'>
-                  <h1 className='text-xl font-semibold'>Your messages</h1>
+                <div className='space-y-1 text-center'>
+                  <h2 className='text-lg font-semibold'>Your messages</h2>
                   <p className='text-muted-foreground text-sm'>
                     Send a message to start a chat.
                   </p>

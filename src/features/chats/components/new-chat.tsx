@@ -75,7 +75,7 @@ export function NewChat({ users, onOpenChange, open }: NewChatProps) {
               </Badge>
             ))}
           </div>
-          <Command className='rounded-lg border'>
+          <Command className='rounded-sm border'>
             <CommandInput
               placeholder='Search people...'
               className='text-foreground'
@@ -99,7 +99,7 @@ export function NewChat({ users, onOpenChange, open }: NewChatProps) {
                         <span className='text-sm font-medium'>
                           {user.fullName}
                         </span>
-                        <span className='text-accent-foreground/70 text-xs'>
+                        <span className='text-muted-foreground text-xs'>
                           {user.username}
                         </span>
                       </div>

@@ -37,7 +37,7 @@ function RouteComponent() {
 
 function MissingClerkPubKey() {
   const codeBlock =
-    'bg-foreground/10 rounded-sm py-0.5 px-1 text-xs text-foreground font-bold'
+    'bg-muted rounded-sm py-0.5 px-1.5 text-xs font-mono font-medium'
   return (
     <AuthenticatedLayout>
       <div className='bg-background flex h-16 justify-between p-4'>
@@ -47,7 +47,7 @@ function MissingClerkPubKey() {
           <ConfigDrawer />
         </div>
       </div>
-      <Main className='flex flex-col items-center justify-start'>
+      <Main variant='default' className='flex flex-col items-center justify-start'>
         <div className='max-w-2xl'>
           <Alert>
             <Key className='size-4' />
@@ -61,25 +61,25 @@ function MissingClerkPubKey() {
           </Alert>
 
           <h1 className='mt-4 text-2xl font-bold'>Set your Clerk API key</h1>
-          <div className='text-foreground/75 mt-4 flex flex-col gap-y-4'>
+          <div className='text-muted-foreground mt-4 flex flex-col gap-y-4'>
             <ol className='list-inside list-decimal space-y-1.5'>
               <li>
                 In the{' '}
                 <a
                   href='https://go.clerk.com/GttUAaK'
                   target='_blank'
-                  className='underline decoration-dashed underline-offset-4 hover:decoration-solid'
+                  className='text-foreground underline decoration-dashed underline-offset-4 hover:decoration-solid'
                 >
                   Clerk
                   <sup>
-                    <ExternalLink className='inline-block size-4' />
+                    <ExternalLink className='inline-block size-3' />
                   </sup>
                 </a>{' '}
                 Dashboard, navigate to the API keys page.
               </li>
               <li>
-                In the <strong>Quick Copy</strong> section, copy your Clerk
-                Publishable Key.
+                In the <strong className='text-foreground'>Quick Copy</strong>{' '}
+                section, copy your Clerk Publishable Key.
               </li>
               <li>
                 Rename <code className={codeBlock}>.env.example</code> to{' '}
@@ -92,11 +92,13 @@ function MissingClerkPubKey() {
             </ol>
             <p>The final result should resemble the following:</p>
 
-            <div className='@container space-y-2 rounded-md bg-slate-800 px-3 py-3 text-sm text-slate-200'>
-              <span className='ps-1'>.env</span>
-              <pre className='overflow-auto overscroll-x-contain rounded bg-slate-950 px-2 py-1 text-xs'>
+            <div className='space-y-2 rounded-sm border bg-card px-3 py-3 text-sm'>
+              <span className='text-muted-foreground ps-1 text-xs font-medium'>
+                .env
+              </span>
+              <pre className='bg-muted text-foreground overflow-auto overscroll-x-contain rounded-sm px-3 py-2 font-mono text-xs'>
                 <code>
-                  <span className='before:text-slate-400 md:before:pe-2 md:before:content-["1."]'>
+                  <span className='text-muted-foreground before:pe-3 before:content-["1"]'>
                     VITE_CLERK_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
                   </span>
                 </code>
@@ -104,11 +106,11 @@ function MissingClerkPubKey() {
             </div>
           </div>
 
-          <Separator className='my-4 w-full' />
+          <Separator className='my-6 w-full' />
 
           <Alert>
             <AlertTitle>Clerk Integration is Optional</AlertTitle>
-            <AlertDescription>
+            <AlertDescription className='space-y-2'>
               <p className='text-balance'>
                 The Clerk integration lives entirely inside{' '}
                 <code className={codeBlock}>src/routes/clerk</code>. If you plan
@@ -118,10 +120,10 @@ function MissingClerkPubKey() {
               </p>
               <p>
                 However, if you don't plan to use Clerk, you can safely remove
-                this directory and related dependency_{' '}
+                this directory and related dependency{' '}
                 <code className={codeBlock}>@clerk/clerk-react</code>.
               </p>
-              <p className='mt-2 text-sm'>
+              <p className='text-muted-foreground text-sm'>
                 This setup is modular by design and won't affect the rest of the
                 application.
               </p>
