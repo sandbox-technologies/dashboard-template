@@ -43,10 +43,10 @@ export function Main({
       data-layout={fixed ? 'fixed' : 'auto'}
       data-variant={variant}
       className={cn(
-        'relative px-4 py-8 sm:px-6 transition-all duration-500 ease-out',
+        'relative px-4 py-6 sm:px-6 mb-4 transition-all duration-500 ease-out',
         
         // Base styles
-        fixed && 'flex grow flex-col overflow-hidden',
+        fixed && 'flex grow flex-col overflow-auto',
         
         // Variant-specific styles
         variant === 'default' && [
@@ -141,7 +141,7 @@ export function Main({
       )}
 
       {/* Content wrapper with proper z-index */}
-      <div className="relative z-10">{children}</div>
+      <div className={cn("relative z-10", fixed && "flex flex-1 flex-col")}>{children}</div>
     </main>
   )
 }

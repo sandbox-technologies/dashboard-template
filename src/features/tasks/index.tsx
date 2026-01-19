@@ -22,9 +22,9 @@ export function Tasks() {
         </div>
       </Header>
 
-      <Main className='flex flex-1 flex-col'>
-        <div className='flex flex-wrap items-center justify-between gap-4 mb-8'>
-          <div className='space-y-1.5'>
+      <Main fixed>
+        <div className='flex flex-wrap items-center justify-between gap-4 mb-6'>
+          <div className='space-y-1'>
             <h2 className='text-2xl font-bold tracking-tight'>Tasks</h2>
             <p className='text-muted-foreground'>
               Here&apos;s a list of your tasks for this month!

@@ -94,8 +94,8 @@ export function Apps() {
       </Header>
 
       {/* ===== Content ===== */}
-      <Main fixed>
-        <div>
+      <Main>
+        <div className='space-y-1'>
           <h1 className='text-2xl font-bold tracking-tight'>
             App Integrations
           </h1>
@@ -103,8 +103,8 @@ export function Apps() {
             Here&apos;s a list of your apps for the integration!
           </p>
         </div>
-        <div className='my-4 flex items-end justify-between sm:my-0 sm:items-center'>
-          <div className='flex flex-col gap-4 sm:my-4 sm:flex-row'>
+        <div className='my-4 flex items-end justify-between sm:items-center'>
+          <div className='flex flex-col gap-4 sm:flex-row'>
             <Input
               placeholder='Filter apps...'
               className='h-9 w-40 lg:w-[250px]'
@@ -146,7 +146,7 @@ export function Apps() {
           </Select>
         </div>
         <Separator />
-        <ul className='faded-bottom no-scrollbar grid gap-4 overflow-auto pt-4 pb-16 md:grid-cols-2 lg:grid-cols-3'>
+        <ul className='grid gap-4 pt-4 pb-4 md:grid-cols-2 lg:grid-cols-3'>
           {filteredApps.map((app) => (
             <li
               key={app.name}
