@@ -2,6 +2,8 @@
 
 A modern admin dashboard template built with Shadcn UI and Vite. Designed with Inspector's clean, minimal aesthetic in mind.
 
+![Inspector Dashboard Preview](public/images/preview-image.png)
+
 ## Features
 
 - Light/dark mode with Inspector's neutral color scheme
